@@ -1,38 +1,38 @@
 import { Router, Response, Request } from "express";
-import { PostEntity } from "../database/entities/post.entity";
-import { PostService } from "../services/post.service"; // import service
+import { CustomerEntity } from "../database/entities/customer.entity";
+import { CustomerService } from "../services/customer.service"; // import service
 
-export class PostController {
+export class CustomerController {
   public router: Router;
-  private postService: PostService; 
+  private CustomerService: CustomerService; 
 
   constructor(){
-    this.postService = new PostService(); // Create a new instance of PostController
+    this.CustomerService = new CustomerService(); 
     this.router = Router();
     this.routes();
   }
 
   public index = async (req: Request, res: Response) => {
-    const posts = await this.postService.index();
-    res.send(posts).json();
+    const Customers = await this.CustomerService.index();
+    res.send(Customers).json();
   } 
 
   public create = async (req: Request, res: Response) => {
-    const post = req['body'] as PostEntity;
-    const newPost = await this.postService.create(post);
-    res.send(newPost);
+    const Customer = req['body'] as CustomerEntity;
+    const newCustomer = await this.CustomerService.create(Customer);
+    res.send(newCustomer);
   }
 
   public update = async (req: Request, res: Response) => {
-    const post = req['body'] as PostEntity;
+    const Customer = req['body'] as CustomerEntity;
     const id =  req['params']['id'];
     
-    res.send(this.postService.update(post, Number(id)));
+    res.send(this.CustomerService.update(Customer, Number(id)));
   }
 
   public delete = async (req: Request, res: Response) => {
     const id =  req['params']['id'];
-    res.send(this.postService.delete(Number(id)));
+    res.send(this.CustomerService.delete(Number(id)));
   } 
 
   /**

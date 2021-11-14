@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "express-jwt": "^6.1.0",
     "pg": "^8.5.1",
     "typeorm": "^0.2.31"
   }
 }
-

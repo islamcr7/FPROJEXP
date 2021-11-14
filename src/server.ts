@@ -1,9 +1,11 @@
 import express, {Request, Response} from 'express';
-import { PostController } from './controller/post.controller'; // import the post controller
+import { CustomerController } from './controller/customer.controller'; 
+import { BankaccountController } from './controller/bankaccount.controller';
 import { createConnection } from "typeorm";
 
 class Server {
-  private postController: PostController;
+  private customerController: CustomerController;
+  private bankaccountController:BankaccountController;
   private app: express.Application;
 
   constructor(){
@@ -28,23 +30,25 @@ class Server {
   public async routes(){
     await createConnection({
       type: "postgres",
-      host: "localhost",
-      port: 5434,
-      username: "blog",
-      password: "blog",
-      database: "blog",
+      host: "127.0.0.1",
+      port: 5433,
+      username: "islam",
+      password: "aaa",
+      database: "NodeDB",
       entities: ["build/database/entities/**/*.js"],
       synchronize: true,
       name: "blog"
     });
 
-    this.postController = new PostController();
+    this.customerController = new CustomerController();
+    this.bankaccountController = new BankaccountController();
 
     this.app.get( "/", (req: Request, res: Response ) => {
       res.send( "Hello world!" );
     });
 
-    this.app.use(`/api/posts/`,this.postController.router); // Configure the new routes of the controller post
+    this.app.use(`/api/customers/`,this.customerController.router); 
+    this.app.use(`/api/bankaccounts/`,this.bankaccountController.router); 
   }
 
   /**
