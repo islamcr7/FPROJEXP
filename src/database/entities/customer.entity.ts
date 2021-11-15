@@ -1,6 +1,7 @@
 import { Entity,Column,PrimaryGeneratedColumn , OneToMany,JoinColumn  } from "typeorm";
 import { bankaccountEntity } from "./bankaccount.entity";
 @Entity('customers')
+//models
 export class CustomerEntity {
     @PrimaryGeneratedColumn()
     id: number;
