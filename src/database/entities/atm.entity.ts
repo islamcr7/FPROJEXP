@@ -1,6 +1,6 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToMany} from "typeorm";
 import { TransactionEntity } from "./transaction.entity";
-
+//models
 @Entity('atms')
 export class atmEntity {
 

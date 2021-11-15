@@ -35,7 +35,7 @@ export class BankaccountController {
     res.send(this.BankaccountService.delete(Number(id)));
   } 
 
-  /**
+  /****
    * Configure the routes of controller
    */
   public routes(){
