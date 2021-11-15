@@ -11,7 +11,7 @@ You can follow the tutorial at [Create a Rest API with Express, PostgreSQL, Type
 ## Get started
 
 ```bash
-git clone https://github.com/bautistaj/expressApi
+git clone https://github.com/islamcr7/FPROJEXP
 ```
 ```bash
 cd expressApi
