@@ -1,7 +1,7 @@
 import { getConnection } from 'typeorm';
 import { bankaccountEntity } from '../database/entities/bankaccount.entity';
 import { BankaccountRepository } from '../repository/bankaccount.repository';
-
+//
 export class BankaccountService {
   private BankaccountRepository: BankaccountRepository;
 

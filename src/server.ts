@@ -2,7 +2,7 @@ import express, {Request, Response} from 'express';
 import { CustomerController } from './controller/customer.controller'; 
 import { BankaccountController } from './controller/bankaccount.controller';
 import { createConnection } from "typeorm";
-
+//
 class Server {
   private customerController: CustomerController;
   private bankaccountController:BankaccountController;

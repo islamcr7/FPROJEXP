@@ -35,7 +35,7 @@ export class CustomerController {
     res.send(this.CustomerService.delete(Number(id)));
   } 
 
-  /**
+  /****
    * Configure the routes of controller
    */
   public routes(){
