@@ -2,6 +2,8 @@ import { Entity,Column,PrimaryGeneratedColumn ,ManyToOne, OneToMany,JoinColumn  
 import { CurrencyEntity } from "./currency.entity";
 import { atmEntity } from "./atm.entity";
 import { bankaccountEntity } from "./bankaccount.entity";
+
+//models
 @Entity('transactions')
 export class TransactionEntity {
     @PrimaryGeneratedColumn()

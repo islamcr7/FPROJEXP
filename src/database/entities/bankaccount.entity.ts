@@ -4,7 +4,7 @@ import { TransactionEntity } from "./transaction.entity";
 
 @Entity('bankaccounts')
 export class bankaccountEntity {
-
+//models
     @PrimaryGeneratedColumn()
     id: number;
 
